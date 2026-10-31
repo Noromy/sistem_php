@@ -1,0 +1,19 @@
+<?php
+// Konfigurasi koneksi database PostgreSQL
+$host     = "localhost";
+$port     = "5432";
+$db       = "nama database anda";    // Sesuaikan dengan nama database Anda
+$user     = "--";    // Username PostgreSQL Anda
+$password = "--";    // Password PostgreSQL Anda
+
+// Menggabungkan parameter koneksi
+$dsn = "host=$host port=$port dbname=$db user=$user password=$password";
+
+// Membuat koneksi menggunakan pg_connect
+$conn = pg_connect($dsn);
+
+// Cek status koneksi
+if (!$conn) {
+    die("Koneksi ke database PostgreSQL gagal: " . pg_last_error());
+}
+?>
